@@ -31,15 +31,15 @@ The model was originally trained using TensorFlow/Keras and converted to ONNX fo
 ```
 text-ml-api/
 │
-├── app/
+├── src/
 │   ├── main.py              # FastAPI entrypoint
 │   ├── model_loader.py      # Model + tokenizer loading
-│   ├── schema.py            # Request/response schemas
+│   ├── statics.py            # Request/response schemas
 │
 ├── models/
-│   └── v1/
-│       ├── model.onnx       # ONNX model file
-│       └── tokenizer.pkl    # Saved tokenizer
+│   └── ├── model.onnx       # ONNX model file
+├── tokenizers/
+|   └── BesafeV1_1.0.00.json    # Saved tokenizer     
 │
 ├── requirements.txt
 ├── Dockerfile
@@ -70,7 +70,6 @@ Prediction + Confidence
 #  Features
 
 ✅ ONNX optimized inference
-✅ No TensorFlow in production
 ✅ Model versioning via environment variables
 ✅ Health check endpoint
 ✅ Input validation with Pydantic
